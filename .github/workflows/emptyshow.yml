@@ -7,7 +7,9 @@ on:
 
 permissions:
   contents: write
-  
+
+environment: staging_environment
+
 jobs:
   deploy:
     name: Deploy to GitHub Pages
@@ -26,6 +28,6 @@ jobs:
           
     - name: Test show
       run: |
-         echo "${{ secrets.FTP_SERVER }}"
+         echo "eccoci: ${{ secrets.FTP_SERVER }}"
 
 
