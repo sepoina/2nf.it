@@ -22,14 +22,14 @@ jobs:
     - uses: actions/setup-node@v4
       with:
           node-version: 18
-          cache: yarn
+          cache: 'npm'
           
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: npm ci
       working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
 
     - name: Build website
-      run: yarn run docusaurus build  
+      run: npm run docusaurus build
       working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
         
     - name: Deploy via FTP
