@@ -1,3 +1,6 @@
+# privati
+readme.private.txt
+
 # Esclude tutte le cartelle 'node_modules' in qualsiasi sottocartella
 node_modules/
 

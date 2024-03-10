@@ -27,12 +27,13 @@ The Eightshift Development Kit provides you with a lot of useful features, so le
 ### Parts of the Development Kit
 
 Eightshift Development Kit consists of a few separate projects. It's useful to know what they are, especially if you're contributing to the Development Kit.
+<!-- 
 #### Eightshift Libs - [docs](eightshift-libs) | [github](https://github.com/duenneffe/eightshift-libs)
 
 Eightshift Libs handles backend functionality and provides backend support for your projects. This includes abstract classes and interfaces for our core features, dependency injection, asset enqueuing, filter & actions and more.
 
 #### Eightshift Frontend Libs - [docs](eightshift-frontend-libs) | [github](https://github.com/duenneffe/eightshift-frontend-libs)
-
+-->
 Eightshift Frontend Libs houses our frontend code, including various helpers, JavaScript functionality, SCSS styles, and block and component defaults.
 
 #### Boilerplate

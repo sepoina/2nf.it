@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 Tespiego prima del truncate questo testo
 
-<!--truncate-->
+<!--truncate
 
 ## Dopo el truncate
 import { 
@@ -53,3 +53,4 @@ return (<div>
 }
 
 <Testami />
+-->
