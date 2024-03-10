@@ -19,6 +19,8 @@ jobs:
 
     - name: Install and Build
       run: |
+        cd website/generator  # Spostati nella sottocartella
+        npm install  # Installa le dipendenze nella sottocartella
         npm install
         npm run docusaurus build  # Assicurati che il tuo package.json abbia uno script "build" che esegue "docusaurus build"
 
