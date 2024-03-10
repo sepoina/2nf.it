@@ -38,12 +38,12 @@ jobs:
       uses: airvzxf/ftp-deployment-action@latest
       with:
         # FTP Server.
-        server: ftp://${{ secrets.FTP_SERVER }}
+        server: ${{ secrets.FTP_SERVER }}
         # FTP User.
         user: ${{ secrets.FTP_USERNAME }}
         # FTP Password.
         password: ${{ secrets.FTP_PASSWORD }}
         # Local directory.
         local_dir: "./website/generator/build"
-        remote_dir: "."
+        remote_dir: "./"
 
