@@ -26,12 +26,11 @@ jobs:
           
     - name: Install dependencies
       run: yarn install --frozen-lockfile
+      working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
 
     - name: Build website
-      run: |
-        cd website/generator 
-        ls
-        yarn run docusaurus build  
+      run: yarn run docusaurus build  
+      working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
         
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
@@ -39,5 +38,5 @@ jobs:
         ftp-server: ftp://${{ secrets.FTP_SERVER }}
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: /  # La cartella generata da Docusaurus build
+        local-dir: website/generator/build  # Modifica questa linea per puntare alla cartella build corretta
         git-ftp-args: --insecure  # Rimuovi --insecure se il tuo server supporta FTP sicuro (sFTP)
