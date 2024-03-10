@@ -1,0 +1,35 @@
+# Esclude tutte le cartelle 'node_modules' in qualsiasi sottocartella
+node_modules/
+
+# Altri file e cartelle comuni da ignorare
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cartelle di log
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directory di compilazione temporanea
+# /dist
+
+# Sistema di file OSX
+.Spotlight-V100
+.Trashes
+
+# File di immagine disco OSX
+*.dmg
+*.iso
+
+# Archivi di progetto e file compressi
+*.tar
+*.zip
+*.gz
+*.bz2
+*.tgz

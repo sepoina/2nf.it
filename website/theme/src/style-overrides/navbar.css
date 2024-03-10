@@ -1,0 +1,73 @@
+.navbar {
+	@apply shadow-none h-navbar px-6 py-0 bg-grey-100;
+
+	&__brand {
+		@apply pt-1;
+	}
+
+	&__logo {
+		@apply max-h-6 max-w-[14.5rem] desktop:max-w-full;
+	}
+
+	&__items {
+		@apply gap-4;
+
+		&--right {
+			@apply gap-8;
+		}
+	}
+
+	&__link {
+		@apply items-center h-full py-0 px-2 text-16 border-t-4 border-t-transparent desktop:flex font-normal;
+
+		&--active {
+			@apply text-current border-t-duenneffe;
+		}
+	}
+
+	&__link svg,
+	&__title {
+		@apply hidden;
+	}
+}
+
+.navbar-sidebar {
+	&__brand,
+	&__items .menu {
+		@apply p-side-padding;
+	}
+
+	&__brand {
+		@apply shadow-none border-b border-b-grey-200;
+	}
+
+	&__items {
+		.menu {
+			&__link {
+				@apply p-0 m-0 text-24 font-bold font-display text-black hover:text-duenneffe;
+
+				&:hover {
+					background: none;
+				}
+
+				&--active:not(.menu__link--sublist) {
+					@apply bg-transparent text-duenneffe;
+				}
+			}
+
+			&__list-item {
+				@apply m-0 p-0;
+
+				&.theme-doc-sidebar-item-link-level-2 {
+					.menu__link {
+						@apply text-18 font-normal tracking-normal;
+					}
+				}
+			}
+
+			&__list {
+				@apply flex flex-col gap-y-5;
+			}
+		}
+	}
+}

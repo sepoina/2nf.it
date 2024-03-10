@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	@variants responsive {
+		.no-scrollbar::-webkit-scrollbar {
+			display: none;
+		}
+
+		.no-scrollbar {
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+		}
+	}
+}
+
+:root {
+	--ifm-navbar-height: 6.5rem;
+}
+
+/* Docusaurus color overrides (auto-generated from Docusaurus tool) */
+:root {
+	--ifm-color-primary: var(--global-colors-duenneffe);
+	--ifm-color-primary-dark: #570202;
+	--ifm-color-primary-darker: #360202;
+	--ifm-color-primary-darkest: #1f0101;
+	--ifm-color-primary-light: #960f0f;
+	--ifm-color-primary-lighter: #ac1a1a;
+	--ifm-color-primary-lightest: #c73636;
+	--ifm-code-font-size: 95%;
+	--ifm-code-background: #ddebf5;
+}
+
+aside {
+	--doc-sidebar-width: 320px;
+}
+
+h1 {
+	@apply font-display text-h3 font-bold;
+}
+
+h2 {
+	@apply font-display text-36 font-bold;
+}
+
+h3 {
+	@apply font-display text-24 font-bold;
+}
+
+h4 {
+	@apply font-display text-18 font-bold;
+}
+
+h5 {
+	@apply font-display text-16 font-bold;
+}
+
+h6 {
+	@apply font-display text-14 font-bold;
+}
+
+li {
+	@apply text-16 font-sans;
+}
+
+blockquote {
+	@apply m-0 my-10 pl-10 pr-0 py-4 border-l-4 border-l-duenneffe;
+
+	p {
+		@apply font-sans text-24 font-bold text-black;
+	}
+}
+
+.es-showcase-grid {
+	@apply mx-auto p-side-padding flex flex-col desktop:grid desktop:grid-cols-2 min-[1365px]:grid-cols-3 gap-14 desktop:gap-24 mb-10 desktop:w-fit;
+}
+
+.es-text-center {
+	@apply text-center;
+}
+
+.es-h-center {
+	@apply mx-auto;
+}

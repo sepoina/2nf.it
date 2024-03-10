@@ -1,0 +1,24 @@
+.pagination-nav {
+	@apply flex flex-col desktop:flex-row desktop:justify-between border-t border-t-grey-200 pt-4 mb-6 desktop:mb-20;
+
+	&__link {
+		@apply border-none p-0;
+
+		&--next {
+			@apply desktop:ml-auto;
+		}
+	}
+
+	&__label {
+		@apply text-24 transition-colors;
+		@apply before:text-grey-400 hover:before:text-duenneffe after:text-grey-400 hover:after:text-duenneffe before:transition-colors after:transition-colors;
+	}
+
+	&__link--prev &__label::before {
+		content: '⬅ ' !important;
+	}
+
+	&__link--next &__label::after {
+		content: ' ⮕' !important;
+	}
+}
