@@ -1,4 +1,4 @@
-name: Build and Deploy Docusaurus Site
+name: prova ambiente
 
 on:
   push:
@@ -27,5 +27,6 @@ jobs:
     - name: Test show
       run: |
         echo "ciao"
+        echo "${{ secrets.FTP_SERVER }}"
 
 
