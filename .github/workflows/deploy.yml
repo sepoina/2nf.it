@@ -1,0 +1,32 @@
+name: Build and Deploy Docusaurus Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Specifica la versione di Node che preferisci
+
+    - name: Install and Build
+      run: |
+        npm install
+        npm run docusaurus build  # Assicurati che il tuo package.json abbia uno script "build" che esegue "docusaurus build"
+
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        ftp-server: ftp://${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: /  # La cartella generata da Docusaurus build
+        git-ftp-args: --insecure  # Rimuovi --insecure se il tuo server supporta FTP sicuro (sFTP)
