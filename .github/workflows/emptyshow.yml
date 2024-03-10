@@ -26,6 +26,6 @@ jobs:
           
     - name: Test show
       run: |
-         echo "eccoci: ${{ secrets.MIO }}"
+         echo "eccoci: ${{ secrets.NON }}"
 
 
