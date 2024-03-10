@@ -1,0 +1,42 @@
+name: Build and Deploy Docusaurus Site
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v4
+      with: 
+          fetch-depth: 0
+          
+    - uses: actions/setup-node@v4
+      with:
+          node-version: 18
+           # cache: 'npm'
+          
+    - name: Install dependencies
+      run: npm ci
+      working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
+
+    - name: Build website
+      run: npm run docusaurus build
+      working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
+        
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        ftp-server: ftp://${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: website/generator/build  # Modifica questa linea per puntare alla cartella build corretta
+        git-ftp-args: --insecure  # Rimuovi --insecure se il tuo server supporta FTP sicuro (sFTP)
