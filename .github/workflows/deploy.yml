@@ -5,25 +5,34 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  
 jobs:
-  build-and-deploy:
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Setup Node
-      uses: actions/setup-node@v2
+    
+    - uses: actions/checkout@v4
+      with: 
+          fetch-depth: 0
+          
+    - uses: actions/setup-node@v4
       with:
-        node-version: '14'  # Specifica la versione di Node che preferisci
+          node-version: 18
+          cache: yarn
+          
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
 
-    - name: Install and Build
+    - name: Build website
       run: |
-        cd website/generator  # Spostati nella sottocartella
-        npm install  # Installa le dipendenze nella sottocartella
-        npm install
-        npm run docusaurus build  # Assicurati che il tuo package.json abbia uno script "build" che esegue "docusaurus build"
-
+        cd website/generator 
+        ls
+        yarn run docusaurus build  
+        
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
