@@ -1,4 +1,4 @@
-name: Build and Deploy Docusaurus Site
+name: Crea la Build per la home di 2nf.it
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Crea la Build per la home di 2nf.it
     runs-on: ubuntu-latest
 
     steps:
@@ -24,15 +24,15 @@ jobs:
           node-version: 18
            # cache: 'npm'
           
-    - name: Install dependencies
+    - name: Installa le dipendenze
       run: npm ci
       working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
 
-    - name: Build website
+    - name: Crea il sito
       run: npm run docusaurus build
       working-directory: website/generator  # Aggiungi questa linea per cambiare la directory di lavoro
 
-    - name: Show local dir
+    - name: Visualizza i file
       run: ls "./website/generator/build"
       
     - name: Pubblica su 2nf.it_home
@@ -49,11 +49,6 @@ jobs:
         delete: "true"
         exclude: ".ftpquota"
 
-    - name: Send Push Notification
-      uses: techulus/push-github-action@1.0.0
-      env:
-        API_KEY: e9e5b3f2-d32b-4a92-99c5-e3e04be60ae2
-        MESSAGE: "E' stato pubblicato il sito!"
 
    #   You may pin to the exact commit or the version.
    #   uses: airvzxf/ftp-deployment-action@5483542d9d0055601ff0bf09c1e552f3a95c9ff8
