@@ -26,7 +26,6 @@ jobs:
           
     - name: Test show
       run: |
-        echo "ciao"
-        echo "${{ secrets.FTP_SERVER }}"
+         echo "${{ secrets.FTP_SERVER }}"
 
 
