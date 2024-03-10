@@ -8,11 +8,9 @@ on:
 permissions:
   contents: write
 
-environment: staging_environment
-
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: prova ambiente
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +26,6 @@ jobs:
           
     - name: Test show
       run: |
-         echo "eccoci: ${{ secrets.FTP_SERVER }}"
+         echo "eccoci: ${{ secrets.MIO }}"
 
 
