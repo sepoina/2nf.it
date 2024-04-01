@@ -1,0 +1,27 @@
+import React from 'react'
+import {
+  UnstyledOpenInCodeSandboxButton,
+  useSandpack,
+} from '@codesandbox/sandpack-react'
+import { ResetIcon, ArrowTopRightIcon} from './Icons.jsx'
+
+
+
+export default function TitleBar({ title = 'Code Playground' }) {
+    const { sandpack } = useSandpack()
+    const { resetAllFiles } = sandpack
+  
+    return (
+      <div className="mb-0  flex items-center justify-between bg-zinc-700 px-3 py-2 sm:rounded-t-lg">
+        <span className="text-sm font-bold text-white">{title}</span>
+        <span className="align-center flex">
+          <button className="" onClick={() => resetAllFiles()}>
+            <ResetIcon className="mr-4 h-5 w-5 text-zinc-300" />
+          </button>
+          <UnstyledOpenInCodeSandboxButton className="relative -top-[1px]">
+            <ArrowTopRightIcon className="h-5 w-5 text-zinc-300" />
+          </UnstyledOpenInCodeSandboxButton>
+        </span>
+      </div>
+    )
+  }
