@@ -1,0 +1,40 @@
+.duenfvertical .sp-preview {
+    height: 100%;
+}
+
+.duenfvertical .sp-editor {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+}
+
+/* ------------ FULLSCREEN -------------- */
+.spfullscreen {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    z-index         : 1000;
+    background-color: #ff00009c;
+    backdrop-filter : blur(4px);
+    margin          : 0 !important;
+    padding         : 0;
+}
+
+.spfullscreen>div {
+    position: fixed;
+    top     : 2vh;
+    left    : 2vw;
+    right   : 2vw;
+    bottom  : 2wh;
+    bottom  : 2vh;
+    z-index : 10000000000000;
+}
+
+.spfullscreen .sp-wrapper,
+.spfullscreen .sp-layout {
+    height: 100%;
+}

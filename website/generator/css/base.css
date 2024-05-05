@@ -86,3 +86,11 @@ a.marker {
 		opacity: 0 !important;
 	}
 }
+
+pre.sp-pristine {
+	background-color:transparent;
+}
+.sp-console-item {
+    padding: 3px 16px 3px 16px !important;
+    font-size: 13px !important;
+}

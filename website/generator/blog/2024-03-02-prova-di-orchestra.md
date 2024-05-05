@@ -14,6 +14,6 @@ Tespiego prima del truncate questo testo
 
 ## Dopo el truncate
 
-import {CodePlayground} from './../src/components/sandboxPlay/SandBoxPlay.jsx';
+import AlbatrosDemo from './../src/demos/24.03.02.Albatros';
 
-<CodePlayground />
+<AlbatrosDemo />
