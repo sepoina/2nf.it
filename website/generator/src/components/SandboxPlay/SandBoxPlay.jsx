@@ -59,7 +59,7 @@ export function SandBoxPlay({
                 >
                     <SandpackLayout
                         className={clsx(
-                            "!-mx-4 flex flex-col flex-nowrap justify-start !rounded-none sm:!mx-0 sm:!rounded-lg",
+                            "!-mx-4 flex flex-col flex-nowrap justify-start !rounded-none sm:!mx-0 sm:!rounded-lg ",
                             setup.height ? setup.height : 'h-[50vh]'
                         )}>
                         <TitleBar

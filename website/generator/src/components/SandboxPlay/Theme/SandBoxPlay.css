@@ -12,16 +12,17 @@
 
 /* ------------ FULLSCREEN -------------- */
 .spfullscreen {
-    position        : fixed;
-    top             : 0;
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
-    z-index         : 1000;
-    background-color: #ff00009c;
-    backdrop-filter : blur(4px);
-    margin          : 0 !important;
-    padding         : 0;
+    position               : fixed;
+    top                    : 0;
+    left                   : 0;
+    right                  : 0;
+    bottom                 : 0;
+    z-index                : 1000;
+    background-color       : #895d5d9e;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter        : blur(4px) grayscale(1);
+    margin                 : 0 !important;
+    padding                : 0;
 }
 
 .spfullscreen>div {

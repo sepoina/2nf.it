@@ -1,4 +1,4 @@
-import { SandBoxPlay } from './../../components/sandboxPlay/SandBoxPlay.jsx';
+import { SandBoxPlay } from './../../components/SandboxPlay/SandBoxPlay.jsx';
 import App from '!!raw-loader!./App.js';
 import Sub from '!!raw-loader!./Sub.js';
 export default function Render() {
@@ -12,10 +12,10 @@ export default function Render() {
         }}
         setup={{
             height:'h-[60vh]', // altezza box in formato tailwind
-            code:'50%',
-            preview:'30%',
-           // console:'20%',
-            portrait:true,
+            code:'50%', // dimensione del codice (css) o false
+            preview:'30%', // dimensione preview (css) o false
+            console:false, // dimensione console o false
+            portrait:true,// orientamento
         }}
 
     />
